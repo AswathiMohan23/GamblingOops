@@ -8,6 +8,7 @@ public class Gambling {
     public static void main(String[] args) {
         int i=0,j=0;
         GamblingDetails gambling = new GamblingDetails();
+        System.out.println("WELCOME TO GAMBLING SIMULATOR\n===============================");
         System.out.println("Gambling stake and bet per game : " + gambling.toString());
         while ((won < 50) && (lost < 50)) {
             randomCheck();
@@ -33,10 +34,11 @@ public class Gambling {
         System.out.println("Bad days are : " );
         printingArray(badDay);
         printing(30);// need to find count for 30 days
+        System.out.println("==================================================================");
         if(badDays>luckyDays)
-            System.out.println("\n\n"+badDays+" times you were unlucky so do you wish to continue next month or want to stop gambling?");
+            System.out.println("\n"+badDays+" times you were unlucky so do you wish to continue next month or want to stop gambling?");
         else
-            System.out.println("\n\n"+luckyDays+" times you were lucky so do you wish to continue next month or want to stop gambling?");
+            System.out.println("\n"+luckyDays+" times you were lucky so do you wish to continue next month or want to stop gambling?");
     }
 
     private static void printing(int i) {
