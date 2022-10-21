@@ -1,7 +1,7 @@
 package com.java;
 
 public class Gambling {
-    static int won = 0, lost = 0, wonCount = 0, lostCount = 0;
+    static int won = 0, lost = 0, wonCount = 0, lostCount = 0,luckyDays=0,badDays=0;
     static int[] luckyDay =new int[35];
     static int[] badDay =new int[35];
 
@@ -19,20 +19,25 @@ public class Gambling {
         for (i = 1; i <= 30; i++) {
             String result = checkResultCount();
             System.out.println("Day " + i + " = " + result);
-            if(result=="Won LUCKY DAY!!!")
+            if(result=="Won LUCKY DAY!!!"){
                 luckyDay[i]=i;
-            else if(result!="Won LUCKY DAY!!!")
-                badDay[i]=i;
+                luckyDays++;
+            }
+            else if(result!="Won LUCKY DAY!!!") {
+                badDay[i] = i;
+                badDays++;
+            }
         }
         System.out.println("lucky days are : " );
         printingArray(luckyDay);
         System.out.println("Bad days are : " );
         printingArray(badDay);
         printing(30);// need to find count for 30 days
+        if(badDays>luckyDays)
+            System.out.println("\n\n"+badDays+" times you were unlucky so do you wish to continue next month or want to stop gambling?");
+        else
+            System.out.println("\n\n"+luckyDays+" times you were lucky so do you wish to continue next month or want to stop gambling?");
     }
-
-
-
     private static void printing(int i) {
         System.out.println("total no of times the gambler won the game in "+i+" days = " + wonCount);
         System.out.println("total no of times the gambler lost the game in "+i+" days = " + lostCount);
@@ -62,7 +67,6 @@ public class Gambling {
 
         return null;
     }
-
     private static void randomCheck() {
         int randomCheck = (int) (Math.floor(Math.random() * 10) % 2);
         switch (randomCheck) {
