@@ -38,6 +38,7 @@ public class Gambling {
         else
             System.out.println("\n\n"+luckyDays+" times you were lucky so do you wish to continue next month or want to stop gambling?");
     }
+
     private static void printing(int i) {
         System.out.println("total no of times the gambler won the game in "+i+" days = " + wonCount);
         System.out.println("total no of times the gambler lost the game in "+i+" days = " + lostCount);
@@ -51,7 +52,6 @@ public class Gambling {
             }
         }
     }
-
     private static String checkResultCount() {
         int randomCheck = (int) (Math.floor(Math.random() * 10) % 2);
         switch (randomCheck) {
@@ -64,7 +64,6 @@ public class Gambling {
             default:
                 break;
         }
-
         return null;
     }
     private static void randomCheck() {
